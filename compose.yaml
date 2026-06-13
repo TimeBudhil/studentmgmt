@@ -13,12 +13,12 @@ app:
   build:
     context: .
     dockerfile: Dockerfile
-  container_name: kimflights-app
+  container_name: studentmgmt
   ports:
     - "8080:8080"
   depends_on:
     - postgres
   environment:
-    SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/kimflights
+    SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/studentmgmt
     SPRING_DATASOURCE_USERNAME: admin
     SPRING_DATASOURCE_PASSWORD: secretpassword

@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: 'postgres:18.4-alpine'
+    restart: always
+    environment:
+      POSTGRES_DB: 'studentmgmt'
+      POSTGRES_USER: 'admin'
+      POSTGRES_PASSWORD: 'secretpassword'
+    ports:
+      - '5432:5432'
+
+app:
+  build:
+    context: .
+    dockerfile: Dockerfile
+  container_name: kimflights-app
+  ports:
+    - "8080:8080"
+  depends_on:
+    - postgres
+  environment:
+    SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/kimflights
+    SPRING_DATASOURCE_USERNAME: admin
+    SPRING_DATASOURCE_PASSWORD: secretpassword

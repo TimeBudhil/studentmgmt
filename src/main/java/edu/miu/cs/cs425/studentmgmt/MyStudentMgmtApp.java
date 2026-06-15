@@ -81,7 +81,8 @@ public class MyStudentMgmtApp implements CommandLineRunner {
                 "Lynn",
                 "Smith",
                 3.45,
-                LocalDate.of(2019, 5, 24)
+                LocalDate.of(2019, 5, 24),
+                "Yes"
         );
 
         // set relationships

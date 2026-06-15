@@ -32,7 +32,11 @@ public class Student {
 
     private Double cgpa;
 
-    private LocalDate dateOfEnrollment;
+    @Column(nullable = false)
+    private LocalDate enrollmentDate;
+
+    @Column(nullable = false)
+    private String isInternational;
 
     // =========================
     // ONE-TO-ONE (Student → Transcript)
@@ -68,14 +72,16 @@ public class Student {
                    String middleName,
                    String lastName,
                    Double cgpa,
-                   LocalDate dateOfEnrollment) {
+                   LocalDate enrollmentDate,
+                   String isInternational) {
         this.studentId = studentId;
         this.studentNumber = studentNumber;
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
         this.cgpa = cgpa;
-        this.dateOfEnrollment = dateOfEnrollment;
+        this.enrollmentDate = enrollmentDate;
+        this.isInternational = isInternational;
     }
 
     public Long getStudentId() {
@@ -126,12 +132,20 @@ public class Student {
         this.cgpa = cgpa;
     }
 
-    public LocalDate getDateOfEnrollment() {
-        return dateOfEnrollment;
+    public LocalDate getEnrollmentDate() {
+        return enrollmentDate;
     }
 
-    public void setDateOfEnrollment(LocalDate dateOfEnrollment) {
-        this.dateOfEnrollment = dateOfEnrollment;
+    public void setEnrollmentDate(LocalDate enrollmentDate) {
+        this.enrollmentDate = enrollmentDate;
+    }
+
+    public String getIsInternational() {
+        return isInternational;
+    }
+
+    public void setIsInternational(String isInternational) {
+        this.isInternational = isInternational;
     }
 
     public Transcript getTranscript() {

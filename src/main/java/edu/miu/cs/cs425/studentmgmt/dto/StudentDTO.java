@@ -11,7 +11,8 @@ public class StudentDTO {
     private String middleName;
     private String lastName;
     private Double cgpa;
-    private LocalDate dateOfEnrollment;
+    private LocalDate enrollmentDate;
+    private String isInternational;
 
     private Long transcriptId;
     private Long classroomId;
@@ -68,12 +69,20 @@ public class StudentDTO {
         this.cgpa = cgpa;
     }
 
-    public LocalDate getDateOfEnrollment() {
-        return dateOfEnrollment;
+    public LocalDate getEnrollmentDate() {
+        return enrollmentDate;
     }
 
-    public void setDateOfEnrollment(LocalDate dateOfEnrollment) {
-        this.dateOfEnrollment = dateOfEnrollment;
+    public void setEnrollmentDate(LocalDate enrollmentDate) {
+        this.enrollmentDate = enrollmentDate;
+    }
+
+    public String getIsInternational() {
+        return isInternational;
+    }
+
+    public void setIsInternational(String isInternational) {
+        this.isInternational = isInternational;
     }
 
     public Long getTranscriptId() {
